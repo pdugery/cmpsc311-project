@@ -1,0 +1,47 @@
+#include <stdint.h>
+#include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
+#include <assert.h>
+
+#include "cache.h"
+#include "jbod.h"
+
+//Uncomment the below code before implementing cache functioncs.
+/*static cache_entry_t *cache = NULL;
+static int cache_size = 0;
+static int clock = 0;*/
+static int num_queries = 0;
+static int num_hits = 0;
+
+int cache_create(int num_entries) {
+    return -10;
+}
+
+int cache_destroy(void) {
+  return -10;
+}
+
+int cache_lookup(int disk_num, int block_num, uint8_t *buf) {
+  return -10;
+}
+
+void cache_update(int disk_num, int block_num, const uint8_t *buf) {
+}
+
+int cache_insert(int disk_num, int block_num, const uint8_t *buf) {
+  return -10;
+}
+
+bool cache_enabled(void) {
+  return false;
+}
+
+void cache_print_hit_rate(void) {
+	fprintf(stderr, "num_hits: %d, num_queries: %d\n", num_hits, num_queries);
+  fprintf(stderr, "Hit rate: %5.1f%%\n", 100 * (float) num_hits / num_queries);
+}
+
+int cache_resize(int new_num_entries) {
+   return -1;
+}
